@@ -1,6 +1,12 @@
 from fastapi import APIRouter
-from controllers.blog import create_blog, get_all_blogs, get_blog_by_id, update_blog_by_id, delete_blog_by_id
 from models.blog import BlogModel
+from controllers.blog import (
+    create_blog,
+    get_all_blogs,
+    get_blog_by_id,
+    update_blog_by_id,
+    delete_blog_by_id
+)
 
 blog_router = APIRouter()
 
