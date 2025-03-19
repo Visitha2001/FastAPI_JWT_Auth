@@ -1,5 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI , Depends , HTTPException , status
 from fastapi.middleware.cors import CORSMiddleware
+
+from routes.auth import router as auth_router
 from routes.entry import entry_root
 from routes.blog import blog_router
 
@@ -15,5 +17,6 @@ app.add_middleware(
 )
 
 # Include your routers
+app.include_router(auth_router)
 app.include_router(entry_root)
 app.include_router(blog_router)
